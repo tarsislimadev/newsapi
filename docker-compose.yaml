@@ -5,6 +5,8 @@ services:
     build: './src/api'
     volumes:
       - './src/api:/app'
+    ports:
+      - '8080:80'
 
   docker-push:
     image: 'tmvdl/projects:newsapi'
