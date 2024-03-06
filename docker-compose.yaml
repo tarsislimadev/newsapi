@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  api:
+    build: './src/api'
+    volumes:
+      - './src/api:/app'
+
+  docker-push:
+    image: 'tmvdl/projects:newsapi'
+    build: './src/api'
+
+  github-release:
+    image: 'github-release'
+    build: './src/api'
